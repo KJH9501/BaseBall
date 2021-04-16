@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<html>
+
+<head>
+	<title>야구세상(타자편)</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+	<div data-role="page" id="page1">
+		<div data-role="header">
+			<a href="DB/login.php" rel="external">초기화면</a>
+			<h1>야구갤러리(타자편)</h1>
+		</div>
+		<div data-role="content" id="page1">
+			<div data-role="tabs">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#tab1">타자용어정리</a></li>
+						<li><a href="#tab2">수비 용어</a></li>
+						<li><a href="#tab3">기타 용어</a></li>
+					</ul>
+				</div>
+				<div id="tab1">
+					<ul data-role="listview" data-inset="true" data-divider-theme="b">
+						<li>
+							<h3>G</h3>
+							<p>Game의 약어, 경기에 나온 수</p>
+						</li>
+						<li>
+							<h3>AB</h3>
+							<p>At Bats의 약어, 타수(타석의 수)를 뜻함</p>
+							<p>(볼넷, 사구, 희생타는 타수에서 제외)</p>
+						</li>
+						<li>
+							<h3>H</h3>
+							<p>Hits의 약어, 안타를 뜻함</p>
+							<p>(2루타, 3루타, 홈런을 포함. 각 1개로 계산)</p>
+						</li>
+						<li>
+							<h3>2,3B</h3>
+								<p>2, 3루타를 뜻함</p>
+						</li>
+						<li>
+							<h3>HR</h3>
+							<p>홈런을 뜻함</p>
+						</li>
+						<li>
+							<h3>TB</h3>
+							<p>총 루타</p>
+							<p>( H+2B+(2*3B)+(3*HR) or 1B+(2*2B)+(3*3B)+(4*HR))</p>
+						</li>
+						<li>
+							<h3>R</h3>
+							<p>Runs Scored의 약어, 득점을 뜻함</p>
+						</li>
+						<li>
+							<h3>RBI</h3>
+							<p>Runs Batted In의 약어, 타점을 뜻함</p>
+						</li>
+						<li>
+							<h3>희생 플라이</h3>
+							<p>외야 뜬공으로 아웃되지만, 주자가 득점시 적용</p>
+						</li>
+						<li>
+							<h3>희생 번트</h3>
+							<p>주자를 진루시키기 위한 고의적인 번트</p>
+						</li>
+						<li>
+							<h3>AVG</h3>
+							<p>Batting Average의 약어, 타율을 뜻함(H/AB)</p>
+						</li>
+						<li>
+							<h3>병살타</h3>
+							<p>주자와 타자가 모두 아웃되는 타격 (2 아웃)</p>
+						</li>
+						<li>
+							<h3>백투백 홈런</h3>
+							<p>앞의 타자가 홈런을 기록한 후, 다음 타순의 타자가 그 타석에서 홈런을 치는 경우.</p>
+						</li>
+						<li>
+							<h3>그랜드 슬램</h3>
+							<p>1루, 2루, 3루에 모두 주자가 있는 상황에서, 타석에 들어선 타자가 홈런을 친 경우. (만루 홈런)</p>
+						</li>
+						<li>
+							<h3>사이클링 히트</h3>
+							<p>한 타자가 한 경기에서 1루타, 2루타, 3루타, 홈런을 모두 기록한 경우. (순서는 관계없음)</p>
+						</li>
+					</ul>
+				</div>
+				<div id="tab2">
+					<ul data-role="listview" data-inset="true" data-divider-theme="d">
+						<li>
+							<h3>SB/CS</h3>
+							<p>도루 허용 / 도루 저지</p>
+						</li>
+						<li>
+							<h3>포수 방어율</h3>
+							<p>포수 출장시 투수들의 평균 자책점</p>
+						</li>
+						<li>
+							<h3>PO(자살)</h3>
+							<p>내/외야수가 직접 아웃시킨 경우</p>
+						</li>
+						<li>
+							<h3>A(보살)</h3>
+								<p>내/외야수가 PO을 할 수 있도록 도와준 경우</p>
+						</li>
+						<li>
+							<h3>병살(더블플레이)</h3>
+							<p>내/외야수의 실수로 의해 타자/주자가 진루시</p>
+						</li>
+						<li>
+							<h3>삼중살(트리플 플레이)</h3>
+							<p>주자와 타자를 모두 아웃시킨 경우 (3 아웃)</p>
+						</li>
+						<li>
+							<h3>수비 이닝(Inn)</h3>
+							<p>수비 위치에서 수비한 이닝 수</p>
+						</li>
+						<li>
+							<h3>수비 범위</h3>
+							<p>(PO + A)/(Inn * 9)</p>
+						</li>
+						<li>
+							<h3>낫아웃</h3>
+							<p>스트라이크 아웃 낫 아웃,투수가 던진 세 번째 스트라이크를 포수가 받지 못하여 삼진 아웃이 되지 않은 경우</p>
+						</li>
+					</ul>
+				</div>
+				<div id="tab3">
+					<ul data-role="listview" data-inset="true" data-divider-theme="e">
+						<li>
+							<h3>규정타석</h3>
+							<p>팀게임수 * 3.1 (MLB 162게임 * 3.1 = 502.2  즉 503타석이 규정타석</p>
+						</li>
+						<li>
+							<h3>규정이닝 </h3>
+							<p>팀게임수 * 1 (MLB 162게임이므로 162이닝이 규정이닝이다. 단, 구원 투수는 규정 이닝과 무관</p>
+						</li>
+						<li>
+							<h3>덕아웃</h3>
+							<p>야구에서 파울 라인 밖에 있는 홈플레이트에서 1루 및 3루까지 거리와 같은 길이의 선수들 대기 구역</p>
+						</li>
+						<li>
+							<h3>불펜</h3>
+								<p>시합중 구원 투수가 투구 연습을 하는 장소. 선발을 제외한 구원투수들을 지칭할 때도 '불펜'이라는 용어를 쓴다.</p>
+						</li>
+						<li>
+							<h3>빈볼</h3>
+							<p>타자를 위협하기 위해, 투수가 고의적으로 타자의 머리 혹은 위험부위로 던지는 공을 의미</p>
+						</li>
+						<li>
+							<h3>벤치 클리어링</h3>
+							<p>심판의 오심 또는 상대투수의 빈볼 등으로 인해 일어나는 팀간의 난투극</p>
+							<p>팀에 따라 다소의 차이는 있지만, 벤치 클리어링시 덕아웃이나 불펜에서 뛰어 나와 가담하지 않는 선수들에게 벌금을 물리기도 한다</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed">
+		  <h3 align = "center">Made by Jeong Hoon</h3>
+		</div>
+	</div>
+
+</body>
+
+</html>

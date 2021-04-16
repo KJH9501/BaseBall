@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="kr">
+	<head>
+	<meta charset="UTF-8">
+	<title>http://www.blueb.co.kr</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+    google.load("maps", "3.4", {
+    	other_params: "sensor=false&language=kr"
+    });
+</script>
+<script type="text/javascript" src="jquery.googlemap.js"></script>
+
+
+
+</head>
+<body>
+
+<h2>지도만 표시</h2>
+<div id="map1" style="width: 500px; height: 300px;"></div>
+<script type="text/javascript">
+  $(function() {
+    $("#map1").googleMap({
+      zoom: 17, // Initial zoom level (optional)
+      coords: [37.561639, 126.981391], // Map center (optional)
+      type: "ROADMAP" // Map type (optional)
+    });
+  })
+</script>
+
+<br/>
+<h2>마커표시</h2>
+<div id="map2" style="width: 500px; height: 300px;"></div>
+<script type="text/javascript">
+	$(function() {
+	    $("#map2").googleMap();
+		$("#map2").addMarker({
+			coords: [37.561639, 126.981391], // Map center
+			url: 'http://www.blueb.co.kr',
+			id: 'marker1'
+		});
+	})
+</script>
+
+<br/>
+<h2>마커 클릭시 정보 표시</h2>
+
+<div id="map3" style="width: 500px; height: 300px;"></div>
+<script type="text/javascript">
+  $(function() {
+    $("#map3").googleMap();
+    $("#map3").addMarker({
+		coords: [37.561639, 126.981391], // Map center
+		title: '마커제목', // Title
+		text:  '<b>이곳은?</b> 이곳에 내용을 입력' // HTML content
+    });
+  })
+</script>
+
+<br/>
+<h2>사용자 아이콘 지정</h2>
+
+<div id="map4" style="width: 500px; height: 300px;"></div>
+<script type="text/javascript">
+  $(function() {
+    $("#map4").googleMap();
+    $("#map4").addMarker({
+		coords: [37.561639, 126.981391], // Map center
+      icon: 'http://www.blueb.co.kr/image/blueblogo_100.png', // Icon URL,
+      url: 'http://www.blueb.co.kr' // Link URL
+    });
+  })
+</script>
+
+<br/>
+<h2>다중 마커</h2>
+<div id="map5" style="width: 500px; height: 300px;"></div>
+<script type="text/javascript">
+  $(function() {
+    $("#map5").googleMap();
+
+    // Marker 1
+    $("#map5").addMarker({
+		coords: [37.561639, 126.981391], // Map center
+    });
+
+    // Marker 2
+    $("#map5").addMarker({
+    	 coords: [37.563238, 126.981198]
+    });
+
+    // Marker 3
+    $("#map5").addMarker({
+        coords: [37.563073, 126.990902]
+    });
+  })
+</script>
+
+
+<br/>
+<h2>길찾기</h2>
+
+<div id="map6" style="width: 500px; height: 300px;"></div>
+<script type="text/javascript">
+  $(function() {
+    $("#map6").googleMap();
+    $("#map6").addWay({
+    	start: "15 avenue des champs Elysées 75008 Paris",
+		end:  [48.895651, 2.290569],
+		route : 'navi', // Block's ID for the route display (optional)
+		langage : 'korean' // language of the route detail (optional)
+	});
+  })
+</script>
+<div id="navi"></div>
+</body>
+</html>

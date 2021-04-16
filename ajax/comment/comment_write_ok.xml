@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<comment>
+    <result>true</result>
+    <message>덧글이 등록되었습니다.</message>
+    <item>
+        <num>4</num>
+        <writer>
+            <![CDATA[김정훈]]>
+        </writer>
+        <content>
+            <![CDATA[새롭게 등록된 글입니다]]>
+        </content>
+        <datetime>
+            <![CDATA[2018-06-11 17:13:08]]>
+        </datetime>
+    </item>
+</comment>

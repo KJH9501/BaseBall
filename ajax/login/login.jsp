@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/xml; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true" %>
+<%
+	String user_name = request.getParameter("user_name");
+	String user_password = request.getParameter("user_password");
+	
+	if (user_name == null) {
+		user_name = "";
+	}
+	
+	if (user_password == null) {
+		user_password = "";
+	}
+	
+	// 결과를 얻어내기 위해서 JSP의 DB연동 처리가 필요합니다.
+	boolean result = true;
+	String message = "안녕하세요. " + user_name + "님!!!";
+	
+	if (result) {
+		if (!user_name.equals("jquery")) {
+			result = false;
+			message = "가입되지 않은 아이디 입니다.";
+		}
+	}
+	
+	if (result) {
+		if (!user_password.equals("123qwe")) {
+			result = false;
+			message = "비밀번호가 잘못되었습니다.";
+		}
+	}
+	
+	if (result) {
+		// 로그인이 성공되었다면, 세션처리
+	}
+%>
+<?xml version='1.0' encoding='UTF-8'?>
+<login>
+	<result><%=result%></result>
+	<message><%=message%></message>
+</login>
